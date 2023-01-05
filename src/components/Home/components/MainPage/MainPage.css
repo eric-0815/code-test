@@ -1,0 +1,54 @@
+.picture {
+    width: 100%;
+    height: 100%;
+    filter: brightness(75%);
+    background-position: center;
+    background-size: cover;
+    background-image: attr(data-content);
+}
+
+.title {
+    color: white;
+    font-weight: bold;
+    font-size: 80px;
+    padding-left: 80px;
+    padding-top: 150px;
+}
+
+.overview {
+    color: white;
+    font-size: 20px;
+    padding-left: 80px;
+    padding-right: 550px;
+    padding-top: 25px;
+}
+
+.rating {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 80px;
+    padding-right: 500px;
+    padding-top: 25px;
+}
+
+.button-row {
+    padding-left: 80px;
+}
+
+.play-button {
+    color: white;
+    background-color: red;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 25px 60px 25px 60px;
+}
+
+.trailer-button {
+    background-color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 30px;
+    padding: 25px;
+}
+
