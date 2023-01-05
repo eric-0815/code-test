@@ -9,14 +9,13 @@ function Home() {
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
     }
-
-    const { movies } = db
+    const { movies, genres } = db
     const movie = movies[getRandomInt(99)]
     return (
         <div className='home' >
             <MainPage movie={movie} />
             <NewThisWeek movies={movies} />
-            <Categories />
+            <Categories movies={movies} genres={genres} />
         </div>
     );
 }
