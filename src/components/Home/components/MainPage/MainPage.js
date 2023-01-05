@@ -1,23 +1,18 @@
-import db from '../../../../data/db.json'
+
 import './MainPage.css'
 
-function MainPage() {
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
-    }
-
-    const movie = db.movies[getRandomInt(99)]
-
+function MainPage(props) {
+    const { movie } = props
+    const { backdrop_path, title, overview, vote_average } = movie
     return (
-        <div alt="" className="picture" style={{ backgroundImage: `url(${movie.backdrop_path})` }}>
-            <div className="title">{movie.title}</div>
-            <div className="overview">{movie.overview}</div>
-            <div className="rating">{movie.vote_average}/ 10</div>
-            <div className="button-row">
-                <button className="play-button">Play</button>
-                <button className="trailer-button">Watch Trailer</button>
+        <div alt="" className="main-background" style={{ backgroundImage: `url(${backdrop_path})` }}>
+            <div className="main-title">{title}</div>
+            <div className="main-overview">{overview}</div>
+            <div className="main-rating">{vote_average}/ 10</div>
+            <div className="main-button-row">
+                <button className="main-play-button">Play</button>
+                <button className="main-trailer-button">Watch Trailer</button>
             </div>
-
         </div >
     );
 }

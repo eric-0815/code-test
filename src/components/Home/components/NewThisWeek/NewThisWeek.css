@@ -1,0 +1,20 @@
+.new-section {
+    font-size: 30px;
+    padding-left: 80px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+.new-picture {
+    height: 120px;
+    width: 200px;
+}
+
+.new-grid {
+    padding-left: 80px;
+}
+
+.new-title {
+    font-size: 20px;
+}

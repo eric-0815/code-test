@@ -1,4 +1,4 @@
-.picture {
+.main-background {
     width: 100%;
     height: 100%;
     filter: brightness(75%);
@@ -7,7 +7,7 @@
     background-image: attr(data-content);
 }
 
-.title {
+.main-title {
     color: white;
     font-weight: bold;
     font-size: 80px;
@@ -15,7 +15,7 @@
     padding-top: 150px;
 }
 
-.overview {
+.main-overview {
     color: white;
     font-size: 20px;
     padding-left: 80px;
@@ -23,7 +23,7 @@
     padding-top: 25px;
 }
 
-.rating {
+.main-rating {
     color: white;
     font-weight: bold;
     font-size: 20px;
@@ -32,11 +32,11 @@
     padding-top: 25px;
 }
 
-.button-row {
+.main-button-row {
     padding-left: 80px;
 }
 
-.play-button {
+.main-play-button {
     color: white;
     background-color: red;
     font-weight: bold;
@@ -44,7 +44,7 @@
     padding: 25px 60px 25px 60px;
 }
 
-.trailer-button {
+.main-trailer-button {
     background-color: white;
     font-weight: bold;
     font-size: 20px;
