@@ -11,14 +11,12 @@ const breakPoints = [
 function Categories(props) {
   const { movies, genres } = props
   const someMovies = movies.slice(-genres.length, movies.length)
-  console.log(someMovies) //backdrop_path
   let items = []
   genres.map((genre, index) => {
     const { name } = genre
     const { backdrop_path } = someMovies[index]
     return items.push({ name, backdrop_path })
   })
-  console.log('items: ', items)
 
   return (
     <div>
@@ -26,7 +24,7 @@ function Categories(props) {
       <Carousel breakPoints={breakPoints}>
         {
           items.map((item, index) =>
-            <div alt="" className="new-picture" style={{ backgroundImage: `url(${item.backdrop_path})` }}>
+            <div key={index} alt="" className="new-picture" style={{ backgroundImage: `url(${item.backdrop_path})` }}>
               <div key={index} item={item} className="categories-title">{item.name}</div>
             </div>
           )
