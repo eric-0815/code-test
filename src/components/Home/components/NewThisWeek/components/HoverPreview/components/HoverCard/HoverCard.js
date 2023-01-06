@@ -3,7 +3,6 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import './HoverCard.css'
 
@@ -29,8 +28,8 @@ function HoverCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" className='hover-play-button '>Play</Button>
-        <Button size="small" className='hover-trailer-button'>Watch Trailer</Button>
+        <button className='hover-play-button'>Play</button>
+        <button className='hover-trailer-button'>Watch Trailer</button>
       </CardActions>
     </Card>
   );
