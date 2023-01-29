@@ -2,7 +2,7 @@ import './NewThisWeek.css'
 import Grid from '@mui/material/Grid';
 import HoverPreview from './components/HoverPreview/HoverPreview';
 
-function NewThisWeek(props) {
+const NewThisWeek = (props) => {
   const { movies } = props
   const someMovies = movies.slice(0, 6)
 

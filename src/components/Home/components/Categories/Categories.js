@@ -8,7 +8,7 @@ const breakPoints = [
   { width: 1200, itemsToShow: 4 },
 ];
 
-function Categories(props) {
+const Categories = (props) => {
   const { movies, genres } = props
   const someMovies = movies.slice(-genres.length, movies.length)
   let items = []

@@ -16,10 +16,13 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
 import SearchIcon from '@mui/icons-material/Search';
 import HomeIcon from '@mui/icons-material/Home';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import PhotoCameraFrontIcon from '@mui/icons-material/PhotoCameraFront';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const drawerWidth = 240;
 
@@ -51,7 +54,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
 }));
-
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -88,7 +90,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function MiniDrawer() {
+const MiniDrawer = () => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -97,15 +99,15 @@ export default function MiniDrawer() {
   };
 
   const handleDrawerClose = () => {
-    setOpen(false);
+    setOpen(!open);
   };
 
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} style={{ background: 'black' }}>
-        <Toolbar>
-          <IconButton
+      <Drawer variant="permanent" open={open} style={{ background: 'black' }}>
+        <DrawerHeader>
+          {/* <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
@@ -116,19 +118,12 @@ export default function MiniDrawer() {
             }}
           >
             <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Eric Hong
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer variant="permanent" open={open}>
-        <DrawerHeader>
+          </IconButton> */}
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            <KeyboardArrowDownIcon />
           </IconButton>
         </DrawerHeader>
-        <Divider />
+
         <List>
           {['Search', 'Home', 'Trending', 'Web Series'].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
@@ -159,8 +154,11 @@ export default function MiniDrawer() {
         </List>
         <Divider />
       </Drawer>
+
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
       </Box>
     </Box >
   );
 }
+
+export default MiniDrawer;

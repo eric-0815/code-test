@@ -1,7 +1,7 @@
 
 import './MainPage.css'
 
-function MainPage(props) {
+const MainPage = (props) => {
     const { movie } = props
     const { backdrop_path, title, overview, vote_average } = movie
     return (
