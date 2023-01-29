@@ -78,16 +78,12 @@
     .main-title {
         color: white;
         font-weight: bold;
-        font-size: 40px;
-        padding-left: 80px;
         padding-top: 150px;
     }
 
     .main-overview {
         color: white;
         font-size: 20px;
-        padding-left: 80px;
-        padding-right: 550px;
         padding-top: 25px;
         margin-bottom: 25px;
     }
