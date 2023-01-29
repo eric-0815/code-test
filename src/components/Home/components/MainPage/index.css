@@ -1,9 +1,4 @@
-.main-container {
-    width: 100%;
-    height: auto;
-}
-
-@media (min-width: 800px) {
+@media (min-width: 1300px) {
     .main-background {
         filter: brightness(75%);
         background-position: center;
@@ -72,7 +67,7 @@
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1300px) {
     .main-background {
         filter: brightness(75%);
         background-position: center;
@@ -83,7 +78,7 @@
     .main-title {
         color: white;
         font-weight: bold;
-        font-size: 80px;
+        font-size: 40px;
         padding-left: 80px;
         padding-top: 150px;
     }
@@ -104,26 +99,32 @@
     }
 
     .main-button-row {
+        display: grid;
         padding-top: 10px;
-        padding-left: 80px;
         padding-bottom: 20px;
     }
 
     .main-play-button {
         color: white;
         background-color: red;
+        width: 80%;
         font-weight: bold;
         font-size: 20px;
+        margin: 0 auto;
+        margin-bottom: 20px;
         padding: 25px 60px 25px 60px;
+        align-items: center;
         cursor: pointer;
     }
 
     .main-trailer-button {
         background-color: white;
+        width: 80%;
         font-weight: bold;
         font-size: 20px;
-        margin-left: 30px;
-        padding: 25px;
+        margin: 0 auto;
+        padding: 25px 60px 25px 60px;
+        align-items: center;
         cursor: pointer;
     }
 

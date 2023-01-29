@@ -1,29 +1,29 @@
 import React, { useState } from "react";
 import HoverableDiv from './components/HoverableDiv/HoverableDiv'
-import HoverCard from './components/HoverCard/HoverCard'
-import Backdrop from '@mui/material/Backdrop';
+// import HoverCard from './components/HoverCard/HoverCard'
+// import Backdrop from '@mui/material/Backdrop';
 
 const HoverPreview = (props) => {
-  const { image, title, overview, vote_average } = props
+  // const { image, title, overview, vote_average } = props
+  const { image, title } = props
+  // const [isHovering, setIsHovering] = useState(false);
+  // const handleMouseOver = () => {
+  //   setIsHovering(true);
+  // };
 
-  const [isHovering, setIsHovering] = useState(false);
-  const handleMouseOver = () => {
-    setIsHovering(true);
-  };
+  // const handleMouseOut = () => {
+  //   setIsHovering(false);
+  // };
 
-  const handleMouseOut = () => {
-    setIsHovering(false);
-  };
-
-  const handleClose = () => {
-    setIsHovering(false);
-  };
+  // const handleClose = () => {
+  //   setIsHovering(false);
+  // };
 
   return (
     <div>
       <HoverableDiv
-        handleMouseOver={handleMouseOver}
-        handleMouseOut={handleMouseOut}
+        handleMouseOver={false}
+        handleMouseOut={false}
         image={image}
         title={title}
       />
