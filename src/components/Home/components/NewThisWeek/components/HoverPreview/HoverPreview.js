@@ -27,19 +27,20 @@ const HoverPreview = (props) => {
         image={image}
         title={title}
       />
-      <Backdrop
+      {/* <Backdrop
         sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={isHovering}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
         onClick={handleClose}
-      >
-        <HoverCard
+      > */}
+      {/* <HoverCard
           image={image}
           title={title}
           overview={overview}
-          vote_average={vote_average} />
-      </Backdrop>
+          vote_average={vote_average} /> 
+    </Backdrop>
+  */}
     </div >
   );
 };

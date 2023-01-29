@@ -1,5 +1,5 @@
 
-import './MainPage.css'
+import './index.css'
 
 const MainPage = (props) => {
     const { movie } = props

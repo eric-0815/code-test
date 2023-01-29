@@ -1,6 +1,6 @@
-import './NewThisWeek.css'
 import Grid from '@mui/material/Grid';
 import HoverPreview from './components/HoverPreview/HoverPreview';
+import './index.css'
 
 const NewThisWeek = (props) => {
   const { movies } = props

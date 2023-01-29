@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import './HoverCard.css'
 
-function HoverCard(props) {
+const HoverCard = (props) => {
   const { image, title, overview, vote_average } = props
   return (
     <Card sx={{ maxWidth: 345 }}>

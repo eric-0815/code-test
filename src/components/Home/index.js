@@ -1,11 +1,11 @@
 import React, { useMemo, useCallback } from 'react'
-import MainPage from './components/MainPage/MainPage'
-import NewThisWeek from './components/NewThisWeek/NewThisWeek'
-import Categories from './components/Categories/Categories'
-import MiniDrawer from './components/MiniDrawer/MiniDrawer'
+import MainPage from './components/MainPage'
+import NewThisWeek from './components/NewThisWeek'
+import Categories from './components/Categories'
+import MiniDrawer from './components/MiniDrawer'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import './Home.css'
+import './index.css'
 import db from '../../data/db.json'
 
 const darkTheme = createTheme({
