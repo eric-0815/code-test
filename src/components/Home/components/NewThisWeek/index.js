@@ -8,8 +8,8 @@ const NewThisWeek = (props) => {
 
   return (
     <div>
-      <div className="new-section">New This Week</div>
-      <Grid container spacing={10} className='new-grid'>
+      <div className="new-this-week-section">New This Week</div>
+      <Grid container spacing={10} className='new-this-week-grid'>
         {someMovies.map((movie, index) => {
           const { backdrop_path, title, overview, vote_average } = movie
           return (

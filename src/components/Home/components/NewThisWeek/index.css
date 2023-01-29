@@ -1,20 +1,33 @@
-.new-section {
-    font-size: 30px;
-    padding-left: 80px;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    font-weight: bold;
+@media (min-width: 1300px) {
+    .new-this-week-section {
+        font-size: 30px;
+        padding-left: 80px;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .new-this-week-picture {
+        height: 120px;
+        width: 200px;
+    }
+
+    .new-this-week-grid {
+        padding-left: 80px;
+    }
 }
 
-.new-picture {
-    height: 120px;
-    width: 200px;
-}
+@media (max-width: 1300px) {
+    .new-this-week-section {
+        font-size: 30px;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        font-weight: bold;
+    }
 
-.new-grid {
-    padding-left: 80px;
-}
+    .new-this-week-picture {
+        height: 120px;
+        width: 200px;
+    }
 
-.new-title {
-    font-size: 20px;
 }
