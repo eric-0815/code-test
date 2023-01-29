@@ -77,13 +77,14 @@
 
     .main-title {
         color: white;
+        font-size: 24px;
         font-weight: bold;
         padding-top: 150px;
     }
 
     .main-overview {
         color: white;
-        font-size: 20px;
+        font-size: 18px;
         padding-top: 25px;
         margin-bottom: 25px;
     }
