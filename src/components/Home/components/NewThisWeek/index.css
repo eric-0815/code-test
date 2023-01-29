@@ -30,4 +30,8 @@
         width: 200px;
     }
 
+    .new-this-week-grid {
+        align-items: center;
+        flex-direction: column;
+    }
 }
