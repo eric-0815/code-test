@@ -77,7 +77,7 @@ const MiniDrawer = () => {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box className='mini-drawer-container'>
       <CssBaseline />
       <Drawer variant="permanent" open={open} style={{ background: 'black' }}>
         <DrawerHeader>
@@ -94,7 +94,7 @@ const MiniDrawer = () => {
             <MenuIcon />
           </IconButton> */}
           <IconButton onClick={handleDrawerOpenAndClose} >
-            <KeyboardArrowDownIcon className='drawer-arrow-down-icon' />
+            <KeyboardArrowDownIcon className='mini-drawer-arrow-down-icon' />
           </IconButton>
           {open && <div>PLAY</div>}
         </DrawerHeader>
@@ -128,11 +128,11 @@ const MiniDrawer = () => {
             </ListItem>
           ))}
         </List>
-        <div className='drawer-user-container'>
-          <div className='drawer-user-icon'></div>
+        <div className='mini-drawer-user-container'>
+          <div className='mini-drawer-user-icon'></div>
           {open && <div>User</div>}
         </div>
-        <div className='drawer-settings-container'>
+        <div className='mini-drawer-settings-container'>
           <SettingsIcon />
           {open && <div>Settings</div>}
         </div>

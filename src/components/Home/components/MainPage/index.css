@@ -1,68 +1,142 @@
-.main-background {
+.main-container {
     width: 100%;
-    height: 100%;
-    filter: brightness(75%);
-    background-position: center;
-    background-size: cover;
-    background-image: attr(data-content);
+    height: auto;
 }
 
-.main-title {
-    color: white;
-    font-weight: bold;
-    font-size: 80px;
-    padding-left: 80px;
-    padding-top: 150px;
+@media (min-width: 800px) {
+    .main-background {
+        filter: brightness(75%);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .main-title {
+        color: white;
+        font-weight: bold;
+        font-size: 80px;
+        padding-left: 80px;
+        padding-top: 150px;
+    }
+
+    .main-overview {
+        color: white;
+        font-size: 20px;
+        padding-left: 80px;
+        padding-right: 550px;
+        padding-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .main-rating {
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .main-button-row {
+        padding-top: 10px;
+        padding-left: 80px;
+        padding-bottom: 20px;
+    }
+
+    .main-play-button {
+        color: white;
+        background-color: red;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 25px 60px 25px 60px;
+        cursor: pointer;
+    }
+
+    .main-trailer-button {
+        background-color: white;
+        font-weight: bold;
+        font-size: 20px;
+        margin-left: 30px;
+        padding: 25px;
+        cursor: pointer;
+    }
+
+    .main-imbd {
+        color: black;
+        font-weight: bold;
+        font-size: 20px;
+        background-color: rgb(234, 176, 67);
+        margin: 0px 10px 0px 80px;
+        padding: 2px 5px 2px 5px
+    }
+
+    .main-rating-container {
+        display: flex;
+    }
 }
 
-.main-overview {
-    color: white;
-    font-size: 20px;
-    padding-left: 80px;
-    padding-right: 550px;
-    padding-top: 25px;
-    margin-bottom: 25px;
-}
+@media (max-width: 800px) {
+    .main-background {
+        filter: brightness(75%);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 
-.main-rating {
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-}
+    .main-title {
+        color: white;
+        font-weight: bold;
+        font-size: 80px;
+        padding-left: 80px;
+        padding-top: 150px;
+    }
 
-.main-button-row {
-    padding-top: 10px;
-    padding-left: 80px;
-    padding-bottom: 20px;
-}
+    .main-overview {
+        color: white;
+        font-size: 20px;
+        padding-left: 80px;
+        padding-right: 550px;
+        padding-top: 25px;
+        margin-bottom: 25px;
+    }
 
-.main-play-button {
-    color: white;
-    background-color: red;
-    font-weight: bold;
-    font-size: 20px;
-    padding: 25px 60px 25px 60px;
-    cursor: pointer;
-}
+    .main-rating {
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+    }
 
-.main-trailer-button {
-    background-color: white;
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 30px;
-    padding: 25px;
-    cursor: pointer;
-}
+    .main-button-row {
+        padding-top: 10px;
+        padding-left: 80px;
+        padding-bottom: 20px;
+    }
 
-.main-imbd {
-    color: black;
-    font-weight: bold;
-    font-size: 20px;
-    background-color: rgb(234, 176, 67);
-    margin: 0px 10px 0px 80px;
-    padding: 2px 5px 2px 5px
-}
+    .main-play-button {
+        color: white;
+        background-color: red;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 25px 60px 25px 60px;
+        cursor: pointer;
+    }
 
-.main-rating-container {
-    display: flex;
+    .main-trailer-button {
+        background-color: white;
+        font-weight: bold;
+        font-size: 20px;
+        margin-left: 30px;
+        padding: 25px;
+        cursor: pointer;
+    }
+
+    .main-imbd {
+        color: black;
+        font-weight: bold;
+        font-size: 20px;
+        background-color: rgb(234, 176, 67);
+        margin: 0px 10px 0px 80px;
+        padding: 2px 5px 2px 5px
+    }
+
+    .main-rating-container {
+        display: flex;
+    }
 }
