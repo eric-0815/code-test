@@ -15,11 +15,11 @@ const NewThisWeek = (props) => {
   return (
     <div>
       <div className="new-this-week-section">New This Week</div>
-      <Grid container spacing={2} className='new-this-week-grid'>
+      <Grid container spacing={12} className='new-this-week-grid'>
         {someMovies.map((movie, index) => {
           const { backdrop_path, title, overview, vote_average } = movie
           return (
-            <Grid item xs={2} md={md} key={index}>
+            <Grid item xs={2} sm={4} md={md} key={index}>
               <HoverPreview
                 image={backdrop_path}
                 title={title}
