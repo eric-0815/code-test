@@ -4,8 +4,6 @@ import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -15,8 +13,12 @@ import HomeIcon from '@mui/icons-material/Home';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import PhotoCameraFrontIcon from '@mui/icons-material/PhotoCameraFront';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import MovieIcon from '@mui/icons-material/Movie';
+import IconButton from '@mui/material/IconButton';
+import SettingsIcon from '@mui/icons-material/Settings';
+import './index.css'
 
-const drawerWidth = 240;
+const drawerWidth = 180;
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
@@ -42,7 +44,6 @@ const closedMixin = (theme) => ({
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'flex-end',
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
 }));
@@ -92,13 +93,14 @@ const MiniDrawer = () => {
           >
             <MenuIcon />
           </IconButton> */}
-          <IconButton onClick={handleDrawerOpenAndClose}>
-            <KeyboardArrowDownIcon />
+          <IconButton onClick={handleDrawerOpenAndClose} >
+            <KeyboardArrowDownIcon className='drawer-arrow-down-icon' />
           </IconButton>
+          {open && <div>PLAY</div>}
         </DrawerHeader>
 
         <List>
-          {['Search', 'Home', 'Trending', 'Web Series'].map((text, index) => (
+          {['Search', 'Home', 'Trending', 'Web Series', 'Movies'].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{
@@ -119,17 +121,22 @@ const MiniDrawer = () => {
                   {index === 1 && (<HomeIcon />)}
                   {index === 2 && (<TrendingUpIcon />)}
                   {index === 3 && (<PhotoCameraFrontIcon />)}
+                  {index === 4 && (<MovieIcon />)}
                 </ListItemIcon>
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
           ))}
         </List>
-        <Divider />
+        <div className='drawer-user-container'>
+          <div className='drawer-user-icon'></div>
+          {open && <div>User</div>}
+        </div>
+        <div className='drawer-settings-container'>
+          <SettingsIcon />
+          {open && <div>Settings</div>}
+        </div>
       </Drawer>
-
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-      </Box>
     </Box >
   );
 }
