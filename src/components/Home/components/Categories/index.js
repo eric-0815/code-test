@@ -24,7 +24,11 @@ const Categories = (props) => {
       <Carousel breakPoints={breakPoints}>
         {
           items.map((item, index) =>
-            <div key={index} alt="" className="new-picture" style={{ backgroundImage: `url(${item.backdrop_path})` }}>
+            <div key={index} alt="" style={{
+              height: '120px',
+              width: '200px',
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${item.backdrop_path})`
+            }}>
               <div key={index} item={item} className="categories-title">{item.name}</div>
             </div>
           )

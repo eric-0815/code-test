@@ -21,15 +21,13 @@
     padding-left: 80px;
     padding-right: 550px;
     padding-top: 25px;
+    margin-bottom: 25px;
 }
 
 .main-rating {
     color: white;
     font-weight: bold;
     font-size: 20px;
-    padding-left: 80px;
-    padding-right: 500px;
-    padding-top: 25px;
 }
 
 .main-button-row {
@@ -56,3 +54,15 @@
     cursor: pointer;
 }
 
+.main-imbd {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgb(234, 176, 67);
+    margin: 0px 10px 0px 80px;
+    padding: 2px 5px 2px 5px
+}
+
+.main-rating-container {
+    display: flex;
+}
