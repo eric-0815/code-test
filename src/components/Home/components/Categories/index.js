@@ -20,7 +20,7 @@ const Categories = (props) => {
 
   return (
     <div>
-      <div className="new-section">Categories</div>
+      <div className="new-this-week-section">Categories</div>
       <Carousel breakPoints={breakPoints}>
         {
           items.map((item, index) =>
