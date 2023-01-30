@@ -1,7 +1,7 @@
 import React from 'react'
 import useMedia from 'use-media';
 import Grid from '@mui/material/Grid';
-import HoverPreview from './components/HoverPreview/HoverPreview';
+import HoverPreview from './components/HoverPreview';
 import './index.css'
 
 const NewThisWeek = (props) => {

@@ -13,6 +13,7 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
+        margin-right: 3px;
     }
 
     .mini-drawer-user-container { 
