@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -55,24 +55,24 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const MiniDrawer = ({ MenuContext }) => {
-  const [openMenu, setOpenMenu] = useContext(MenuContext)
+const MiniDrawer = () => {
+  const [open, setOpen] = useState(false)
 
   const handleDrawerOpenAndClose = () => {
-    setOpenMenu(!openMenu);
+    setOpen(!open);
   };
 
   return (
     <Box className='mini-drawer-container'>
       <CssBaseline />
-      <Drawer variant="permanent" open={openMenu} style={{ background: 'black' }}>
+      <Drawer variant="permanent" open={open} style={{ background: 'black' }}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerOpenAndClose} >
             <KeyboardArrowDownIcon className='mini-drawer-arrow-down-icon' />
           </IconButton>
-          {openMenu && <div>PLAY</div>}
+          {open && <div>PLAY</div>}
         </DrawerHeader>
-        <DrawerContent openMenu={openMenu} />
+        <DrawerContent open={open} />
       </Drawer>
     </Box >
   );

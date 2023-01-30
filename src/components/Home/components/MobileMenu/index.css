@@ -1,4 +1,6 @@
-.mobile-menu-icon {
-    float: right;
-    margin: 5px;
+@media (max-width: 1300px) {
+    .mobile-menu-container {
+        float: right;
+        margin: 5px;
+    }
 }

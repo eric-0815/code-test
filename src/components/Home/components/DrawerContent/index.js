@@ -1,4 +1,3 @@
-import React, { useContext } from 'react'
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -10,24 +9,25 @@ import PhotoCameraFrontIcon from '@mui/icons-material/PhotoCameraFront';
 import MovieIcon from '@mui/icons-material/Movie';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ListItemText from '@mui/material/ListItemText';
+import './index.css'
 
-const DrawerContent = ({ openMenu }) => {
+const DrawerContent = ({ open }) => {
     return (
-        <div>
+        <div className=''>
             <List>
                 {['Search', 'Home', 'Trending', 'Web Series', 'Movies'].map((text, index) => (
                     <ListItem key={text} disablePadding sx={{ display: 'block' }}>
                         <ListItemButton
                             sx={{
                                 minHeight: 48,
-                                justifyContent: openMenu ? 'initial' : 'center',
+                                justifyContent: open ? 'initial' : 'center',
                                 px: 2.5,
                             }}
                         >
                             <ListItemIcon
                                 sx={{
                                     minWidth: 0,
-                                    mr: openMenu ? 3 : 'auto',
+                                    mr: open ? 3 : 'auto',
                                     justifyContent: 'center',
                                 }}
                             >
@@ -37,18 +37,18 @@ const DrawerContent = ({ openMenu }) => {
                                 {index === 3 && (<PhotoCameraFrontIcon />)}
                                 {index === 4 && (<MovieIcon />)}
                             </ListItemIcon>
-                            <ListItemText primary={text} sx={{ opacity: openMenu ? 1 : 0 }} />
+                            <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
                         </ListItemButton>
                     </ListItem>
                 ))}
             </List>
-            <div className='mini-drawer-user-container'>
-                <div className='mini-drawer-user-icon'></div>
-                {openMenu && <div>User</div>}
+            <div className='drawer-content-user-container'>
+                <div className='drawer-content-user-icon'></div>
+                {open && <div>User</div>}
             </div>
-            <div className='mini-drawer-settings-container'>
+            <div className='drawer-content-settings-container'>
                 <SettingsIcon />
-                {openMenu && <div>Settings</div>}
+                {open && <div>Settings</div>}
             </div>
         </div>
     )
