@@ -1,21 +1,11 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import SearchIcon from '@mui/icons-material/Search';
-import HomeIcon from '@mui/icons-material/Home';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import PhotoCameraFrontIcon from '@mui/icons-material/PhotoCameraFront';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import MovieIcon from '@mui/icons-material/Movie';
 import IconButton from '@mui/material/IconButton';
-import SettingsIcon from '@mui/icons-material/Settings';
+import DrawerContent from '../DrawerContent';
 import './index.css'
 
 const drawerWidth = 180;
@@ -65,65 +55,24 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const MiniDrawer = () => {
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
+const MiniDrawer = ({ MenuContext }) => {
+  const [openMenu, setOpenMenu] = useContext(MenuContext)
 
   const handleDrawerOpenAndClose = () => {
-    setOpen(!open);
+    setOpenMenu(!openMenu);
   };
 
   return (
     <Box className='mini-drawer-container'>
       <CssBaseline />
-      <Drawer variant="permanent" open={open} style={{ background: 'black' }}>
+      <Drawer variant="permanent" open={openMenu} style={{ background: 'black' }}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerOpenAndClose} >
             <KeyboardArrowDownIcon className='mini-drawer-arrow-down-icon' />
           </IconButton>
-          {open && <div>PLAY</div>}
+          {openMenu && <div>PLAY</div>}
         </DrawerHeader>
-
-        <List>
-          {['Search', 'Home', 'Trending', 'Web Series', 'Movies'].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-                onClick={handleDrawerOpen}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  {index === 0 && (<SearchIcon />)}
-                  {index === 1 && (<HomeIcon />)}
-                  {index === 2 && (<TrendingUpIcon />)}
-                  {index === 3 && (<PhotoCameraFrontIcon />)}
-                  {index === 4 && (<MovieIcon />)}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <div className='mini-drawer-user-container'>
-          <div className='mini-drawer-user-icon'></div>
-          {open && <div>User</div>}
-        </div>
-        <div className='mini-drawer-settings-container'>
-          <SettingsIcon />
-          {open && <div>Settings</div>}
-        </div>
+        <DrawerContent openMenu={openMenu} />
       </Drawer>
     </Box >
   );

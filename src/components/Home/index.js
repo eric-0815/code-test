@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react'
+import React, { useState, useMemo, useCallback, createContext } from 'react'
 import MainPage from './components/MainPage'
 import NewThisWeek from './components/NewThisWeek'
 import Categories from './components/Categories'
@@ -14,9 +14,16 @@ const darkTheme = createTheme({
     },
 });
 
+const MenuContext = createContext();
+
+const MenuProvider = (props) => {
+    const [openMenu, setOpenMenu] = useState(false)
+    const value = [openMenu, setOpenMenu]
+    return <MenuContext.Provider value={value} {...props} />
+}
+
 const Home = () => {
     const { movies, genres } = db
-
     const getRandomInt = useCallback((max) => {
         return Math.floor(Math.random() * max);
     }, [])
@@ -29,11 +36,13 @@ const Home = () => {
         <ThemeProvider theme={darkTheme}>
             <CssBaseline />
             <div className='home' >
-                <MiniDrawer />
-                <MainPage movie={movie} />
-                <NewThisWeek movies={movies} />
-                <Categories movies={movies} genres={genres} />
-                <MobileDrawer />
+                <MenuProvider>
+                    <MiniDrawer MenuContext={MenuContext} />
+                    <MainPage movie={movie} MenuContext={MenuContext} />
+                    <NewThisWeek movies={movies} />
+                    <Categories movies={movies} genres={genres} />
+                    <MobileDrawer />
+                </MenuProvider>
             </div>
         </ThemeProvider>
     );

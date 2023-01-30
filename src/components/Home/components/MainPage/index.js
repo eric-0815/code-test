@@ -1,12 +1,16 @@
+import React, { useContext } from 'react'
 import MobileMenu from '../MobileMenu'
 import './index.css'
 
 const MainPage = (props) => {
-    const { movie } = props
+    const { movie, MenuContext } = props
     const { backdrop_path, title, overview, vote_average } = movie
+
+    const [openMenu, setOpenMenu] = useContext(MenuContext)
+
     return (
         <div alt="" className="main-background" style={{ backgroundImage: `url(${backdrop_path})` }}>
-            <MobileMenu />
+            <MobileMenu MenuContext={MenuContext} />
             <div className="main-title">{title}</div>
             <div className="main-overview">{overview}</div>
             <div className='main-rating-container'>
