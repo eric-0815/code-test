@@ -13,9 +13,13 @@
         justify-content: space-evenly;
     }
 
+    .bottom-drawer-button{
+        font-size: 400%;
+    }
     .bottom-drawer-button:hover {
         background-color: rgb(184, 182, 182);
-        border-bottom: 2px solid red;
+        border-bottom: 3px solid red;
+        cursor: pointer;
     }
 
 }

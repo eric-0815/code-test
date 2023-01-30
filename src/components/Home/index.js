@@ -3,10 +3,9 @@ import MainPage from './components/MainPage'
 import NewThisWeek from './components/NewThisWeek'
 import Categories from './components/Categories'
 import MiniDrawer from './components/MiniDrawer'
-import BottomDrawer from './components/BottomDrawer'
+import MobileDrawer from './components/MobileDrawer'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import './index.css'
 import db from '../../data/db.json'
 
 const darkTheme = createTheme({
@@ -34,7 +33,7 @@ const Home = () => {
                 <MainPage movie={movie} />
                 <NewThisWeek movies={movies} />
                 <Categories movies={movies} genres={genres} />
-                <BottomDrawer />
+                <MobileDrawer />
             </div>
         </ThemeProvider>
     );

@@ -5,7 +5,7 @@ import PhotoCameraFrontIcon from '@mui/icons-material/PhotoCameraFront';
 import MovieIcon from '@mui/icons-material/Movie';
 import './index.css'
 
-const BottomDrawer = () => {
+const MobileDrawer = () => {
 
     return (
         <div className='bottom-drawer-container'>
@@ -17,4 +17,4 @@ const BottomDrawer = () => {
     )
 }
 
-export default BottomDrawer;
+export default MobileDrawer;
