@@ -55,15 +55,17 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const MiniDrawer = () => {
+const MiniDrawer = ({ isMobile }) => {
   const [open, setOpen] = useState(false)
+
+  const boxClassName = isMobile ? '' : 'mini-drawer-container'
 
   const handleDrawerOpenAndClose = () => {
     setOpen(!open);
   };
 
   return (
-    <Box className='mini-drawer-container'>
+    <Box className={boxClassName} >
       <CssBaseline />
       <Drawer variant="permanent" open={open} style={{ background: 'black' }}>
         <DrawerHeader>

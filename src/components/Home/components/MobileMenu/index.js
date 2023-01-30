@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import DrawerContext from '../DrawerContent'
+import MiniDrawer from '../MiniDrawer'
 import './index.css'
 
 
@@ -12,7 +12,7 @@ const MobileMenu = () => {
             <IconButton>
                 <MenuIcon />
             </IconButton>
-            {open && <DrawerContext open={true} />}
+            <MiniDrawer isMobile={true} />
         </div>
     )
 }

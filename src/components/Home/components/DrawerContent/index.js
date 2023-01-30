@@ -13,7 +13,7 @@ import './index.css'
 
 const DrawerContent = ({ open }) => {
     return (
-        <div className=''>
+        <div className='drawer-content-container'>
             <List>
                 {['Search', 'Home', 'Trending', 'Web Series', 'Movies'].map((text, index) => (
                     <ListItem key={text} disablePadding sx={{ display: 'block' }}>

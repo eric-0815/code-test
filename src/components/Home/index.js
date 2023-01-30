@@ -28,7 +28,7 @@ const Home = () => {
         <ThemeProvider theme={darkTheme}>
             <CssBaseline />
             <div className='home' >
-                <MiniDrawer />
+                <MiniDrawer isMobile={false} />
                 <MainPage movie={movie} />
                 <NewThisWeek movies={movies} />
                 <Categories movies={movies} genres={genres} />
