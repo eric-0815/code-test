@@ -1,0 +1,22 @@
+.bottom-drawer-container{
+    display: none;
+}
+
+@media (max-width: 1300px) {
+    .bottom-drawer-container {
+        display: flex;
+        width: 100%;
+        height: auto;
+        margin: auto;
+        padding: 5px;
+        background-color: gray;
+        justify-content: space-evenly;
+    }
+
+    .bottom-drawer-button:hover {
+        background-color: rgb(184, 182, 182);
+        border-bottom: 2px solid red;
+    }
+
+}
+

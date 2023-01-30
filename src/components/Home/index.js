@@ -3,6 +3,7 @@ import MainPage from './components/MainPage'
 import NewThisWeek from './components/NewThisWeek'
 import Categories from './components/Categories'
 import MiniDrawer from './components/MiniDrawer'
+import BottomDrawer from './components/BottomDrawer'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import './index.css'
@@ -33,6 +34,7 @@ const Home = () => {
                 <MainPage movie={movie} />
                 <NewThisWeek movies={movies} />
                 <Categories movies={movies} genres={genres} />
+                <BottomDrawer />
             </div>
         </ThemeProvider>
     );

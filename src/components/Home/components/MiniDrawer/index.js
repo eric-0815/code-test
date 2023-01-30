@@ -81,18 +81,6 @@ const MiniDrawer = () => {
       <CssBaseline />
       <Drawer variant="permanent" open={open} style={{ background: 'black' }}>
         <DrawerHeader>
-          {/* <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              marginRight: 5,
-              ...(open && { display: 'none' }),
-            }}
-          >
-            <MenuIcon />
-          </IconButton> */}
           <IconButton onClick={handleDrawerOpenAndClose} >
             <KeyboardArrowDownIcon className='mini-drawer-arrow-down-icon' />
           </IconButton>
