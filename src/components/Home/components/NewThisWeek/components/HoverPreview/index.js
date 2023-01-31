@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import HoverableDiv from './components/HoverableDiv'
 import HoverCard from './components/HoverCard'
 import Backdrop from '@mui/material/Backdrop';
-import './index.css'
 
 const HoverPreview = (props) => {
   const { image, title, overview, vote_average, isSmall } = props

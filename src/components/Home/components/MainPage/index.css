@@ -4,6 +4,7 @@
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        box-shadow: -30px 30px 50px #44423d;
     }
 
     .main-title {
@@ -21,12 +22,6 @@
         padding-right: 550px;
         padding-top: 25px;
         margin-bottom: 25px;
-    }
-
-    .main-rating {
-        color: white;
-        font-weight: bold;
-        font-size: 20px;
     }
 
     .main-button-row {
@@ -62,9 +57,6 @@
         padding: 2px 5px 2px 5px
     }
 
-    .main-rating-container {
-        display: flex;
-    }
 }
 
 @media (max-width: 1300px) {
@@ -88,12 +80,6 @@
         font-size: 18px;
         padding-top: 25px;
         margin: 0px 0px 25px 10px;
-    }
-
-    .main-rating {
-        color: white;
-        font-weight: bold;
-        font-size: 20px;
     }
 
     .main-button-row {
@@ -136,7 +122,14 @@
         padding: 2px 5px 2px 5px
     }
 
-    .main-rating-container {
+}
+
+.main-rating-container {
         display: flex;
-    }
+}
+
+.main-rating {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
 }
