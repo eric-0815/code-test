@@ -1,7 +1,4 @@
 @media (min-width: 1300px) {
-    .mini-drawer-container {
-        display: flex;
-    }
     .mini-drawer-arrow-down-icon {
         font-size: 150%;
         color: red;
@@ -9,8 +6,12 @@
     }
 }
 
-@media (max-width: 1300px) {
-    .mini-drawer-container {
-        display: none;
-    }
+.mini-drawer-big-container {
+        display: flex;
 }
+
+
+.mini-drawer-small-container {
+    display: none;
+}
+

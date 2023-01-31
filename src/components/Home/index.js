@@ -24,6 +24,8 @@ const darkTheme = createTheme({
 
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false)
+    const [isMobile, setIsMobile] = useState(false)
+
     const { movies, genres } = db
 
     const getRandomInt = useCallback((max) => {
@@ -38,8 +40,8 @@ const Home = () => {
         <ThemeProvider theme={darkTheme}>
             <CssBaseline />
             <div>
-                <MiniDrawer />
-                <MainPage movie={movie} />
+                <MiniDrawer isOpen={isOpen} setIsOpen={setIsOpen} isMobile={isMobile} setIsMobile={setIsMobile} />
+                <MainPage movie={movie} isOpen={isOpen} setIsOpen={setIsOpen} isMobile={isMobile} setIsMobile={setIsMobile} />
                 <NewThisWeek movies={movies} />
                 <Categories movies={movies} genres={genres} />
                 <MobileDrawer />

@@ -1,4 +1,5 @@
-import React, { useState, useContext } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import useMedia from 'use-media';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -8,9 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import DrawerContent from '../DrawerContent';
 import './index.css'
 
-const drawerWidth = 180;
-
-const openedMixin = (theme) => ({
+const openedMixin = (theme, drawerWidth) => ({
   width: drawerWidth,
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
@@ -39,42 +38,57 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }) => ({
+  ({ theme, isOpen, drawerWidth }) => ({
     width: drawerWidth,
     flexShrink: 0,
     whiteSpace: 'nowrap',
     boxSizing: 'border-box',
-    ...(open && {
-      ...openedMixin(theme),
-      '& .MuiDrawer-paper': openedMixin(theme),
+    ...(isOpen && {
+      ...openedMixin(theme, drawerWidth),
+      '& .MuiDrawer-paper': openedMixin(theme, drawerWidth),
     }),
-    ...(!open && {
+    ...(!isOpen && {
       ...closedMixin(theme),
-      '& .MuiDrawer-paper': closedMixin(theme),
+      '& .MuiDrawer-paper': closedMixin(theme, drawerWidth),
     }),
   }),
 );
 
 const MiniDrawer = (props) => {
-  const [open, setOpen] = useState(false)
+  const { isOpen, setIsOpen, isMobile, setIsMobile } = props
+  const [open, setOpen] = useState(isOpen);
 
-  const boxClassName = '' // isMobile ? '' : 'mini-drawer-container'
-  const handleDrawerOpenAndClose = () => {
-    setOpen(!open);
-  };
+  const isBig = useMedia({ minWidth: '1300px' });
+  const isSmall = useMedia({ maxWidth: '1300px' });
+  const className = useState(isBig ? 'mini-drawer-big-container' : 'mini-drawer-small-container')
+  const [containerClassName, setContainerClassName] = useState(className);
+
+  const drawerWidth = isMobile ? 500 : 180;
+  console.log('isOpen: ', isOpen)
+  const handleOpendAndClose = useCallback(() => {
+    // setIsOpen(!isOpen)
+    setOpen(!open)
+    setIsMobile(false)
+  }, [open, setOpen, setIsMobile])
+
+  // useEffect(() => {
+  //   const newClassName = isBig && !isMobile ? 'mini-drawer-big-container' : 'mini-drawer-small-container'
+  //   console.log(newClassName)
+  //   setContainerClassName(newClassName)
+  // }, [isBig, setContainerClassName]);
+
   return (
-    <Box className={boxClassName} >
-      <CssBaseline />
-      <Drawer variant="permanent" open={open} style={{ background: 'black' }}>
+    <div className={containerClassName}>
+      <Drawer variant="permanent" isOpen={open} drawerWidth={drawerWidth} style={{ background: 'black' }}>
         <DrawerHeader>
-          <IconButton onClick={handleDrawerOpenAndClose} >
+          <IconButton onClick={handleOpendAndClose} >
             <KeyboardArrowDownIcon className='mini-drawer-arrow-down-icon' />
           </IconButton>
           {open && <div>PLAY</div>}
         </DrawerHeader>
         <DrawerContent open={open} />
       </Drawer>
-    </Box >
+    </div>
   );
 }
 

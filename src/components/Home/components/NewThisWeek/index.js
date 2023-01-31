@@ -1,5 +1,4 @@
 import React from 'react'
-import useMedia from 'use-media';
 import Grid from '@mui/material/Grid';
 import HoverPreview from './components/HoverPreview';
 import './index.css'
@@ -7,10 +6,6 @@ import './index.css'
 const NewThisWeek = (props) => {
   const { movies } = props
   const someMovies = movies.slice(0, 6)
-
-  const isSmall = useMedia('(max-width: 1300px)')
-  // const isNormal = useMedia('(min-width: 1300px)')
-  const md = isSmall ? 4 : 2;
 
   return (
     <div>
