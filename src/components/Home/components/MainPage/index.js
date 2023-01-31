@@ -2,12 +2,18 @@ import MobileMenu from '../MobileMenu'
 import './index.css'
 
 const MainPage = (props) => {
-    const { movie, isOpen, setIsOpen, isMobile, setIsMobile } = props
+    const { movie, isOpen, setIsOpen, isMobile, setIsMobile, isBig, isSmall } = props
     const { backdrop_path, title, overview, vote_average } = movie
 
     return (
         <div alt="" className="main-background" style={{ backgroundImage: `url(${backdrop_path})` }}>
-            <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} isMobile={isMobile} setIsMobile={setIsMobile} />
+            <MobileMenu
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+                isMobile={isMobile}
+                setIsMobile={setIsMobile}
+                isBig={isBig}
+                isSmall={isSmall} />
             <div className="main-title">{title}</div>
             <div className="main-overview">{overview}</div>
             <div className='main-rating-container'>

@@ -5,7 +5,7 @@ import Backdrop from '@mui/material/Backdrop';
 import './index.css'
 
 const HoverPreview = (props) => {
-  const { image, title, overview, vote_average } = props
+  const { image, title, overview, vote_average, isSmall } = props
 
   const [isHovering, setIsHovering] = useState(false);
 
@@ -24,6 +24,7 @@ const HoverPreview = (props) => {
         image={image}
         title={title}
         handleOpen={handleOpen}
+        isSmall={isSmall}
       />
       <Backdrop
         sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}

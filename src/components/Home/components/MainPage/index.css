@@ -64,7 +64,6 @@
 
     .main-rating-container {
         display: flex;
-        z-index: 1;
     }
 }
 

@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import useMedia from 'use-media';
 import { styled } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -12,7 +11,7 @@ const EXPAND_CONTAINER = 'mini-drawer-expand-container'
 const HIDE_CONTAINER = 'mini-drawer-hide-container'
 
 const NORMAL_WIDTH = 180
-const MOBILE_WIDTH = 500
+const MOBILE_WIDTH = 1500
 
 
 const openedMixin = (theme, drawerWidth) => ({
@@ -61,10 +60,8 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const MiniDrawer = (props) => {
-  const { isOpen, setIsOpen, isMobile, setIsMobile } = props
+  const { isOpen, setIsOpen, isMobile, setIsMobile, isBig, isSmall } = props
 
-  const isBig = useMedia({ minWidth: '1300px' });
-  const isSmall = useMedia({ maxWidth: '1300px' });
   const className = useState(isBig ? SHOW_CONTAINER : HIDE_CONTAINER)
   const [containerClassName, setContainerClassName] = useState(className);
   const [drawerWidth, setDrawerWidth] = useState(isMobile ? MOBILE_WIDTH : NORMAL_WIDTH);

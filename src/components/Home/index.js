@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useCallback } from 'react'
+import useMedia from 'use-media';
 import MainPage from './components/MainPage'
 import NewThisWeek from './components/NewThisWeek'
 import Categories from './components/Categories'
@@ -14,17 +15,12 @@ const darkTheme = createTheme({
     },
 });
 
-// const MobileContext = createContext()
-
-// const MobileProvider = (props) => {
-//     const [isMobile, setIsMobile] = useState(false)
-//     const value = [isMobile, setIsMobile]
-//     return <MobileContext.Provider value={value} {...props} />
-// }
-
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [isMobile, setIsMobile] = useState(false)
+
+    const isBig = useMedia({ minWidth: '1300px' });
+    const isSmall = useMedia({ maxWidth: '1300px' });
 
     const { movies, genres } = db
 
@@ -40,9 +36,23 @@ const Home = () => {
         <ThemeProvider theme={darkTheme}>
             <CssBaseline />
             <div>
-                <MiniDrawer isOpen={isOpen} setIsOpen={setIsOpen} isMobile={isMobile} setIsMobile={setIsMobile} />
-                <MainPage movie={movie} isOpen={isOpen} setIsOpen={setIsOpen} isMobile={isMobile} setIsMobile={setIsMobile} />
-                <NewThisWeek movies={movies} />
+                <MiniDrawer
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
+                    isMobile={isMobile}
+                    setIsMobile={setIsMobile}
+                    isBig={isBig}
+                    isSmall={isSmall} />
+                <MainPage
+                    movie={movie}
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
+                    isMobile={isMobile}
+                    setIsMobile={setIsMobile}
+                    isBig={isBig}
+                    isSmall={isSmall}
+                />
+                <NewThisWeek movies={movies} isSmall={isSmall} />
                 <Categories movies={movies} genres={genres} />
                 <MobileDrawer />
             </div>

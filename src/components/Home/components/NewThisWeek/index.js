@@ -1,10 +1,9 @@
-import React from 'react'
 import Grid from '@mui/material/Grid';
 import HoverPreview from './components/HoverPreview';
 import './index.css'
 
 const NewThisWeek = (props) => {
-  const { movies } = props
+  const { movies, isSmall } = props
   const someMovies = movies.slice(0, 6)
 
   return (
@@ -19,7 +18,8 @@ const NewThisWeek = (props) => {
                 image={backdrop_path}
                 title={title}
                 overview={overview}
-                vote_average={vote_average} />
+                vote_average={vote_average}
+                isSmall={isSmall} />
             </Grid>
           )
         })}
