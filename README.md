@@ -1,5 +1,10 @@
 # Code Test
 
+Netlify:
+```
+https://erichongcodetest.netlify.app/
+```
+
 # How to run
 ```
 1. npm i
