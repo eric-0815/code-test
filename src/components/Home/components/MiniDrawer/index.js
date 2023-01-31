@@ -72,17 +72,16 @@ const MiniDrawer = (props) => {
   useEffect(() => {
     const shouldShow = () => {
       if (isBig) return true
-      if (isSmall && isOpen) return true
+      else if (isSmall && isOpen) return true
       return false
     }
-    console.log('isOpen: ', isOpen)
     console.log(shouldShow())
     const newClassName = shouldShow() ? 'mini-drawer-big-container' : 'mini-drawer-small-container'
     console.log(newClassName)
     setContainerClassName(newClassName)
 
 
-  }, [isBig, setContainerClassName, isMobile, isSmall]);
+  }, [isBig, setContainerClassName, isMobile, isSmall, isOpen]);
 
   return (
     <div className={containerClassName}>

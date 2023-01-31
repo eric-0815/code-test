@@ -1,13 +1,11 @@
-@media (min-width: 1300px) {
-    .mini-drawer-arrow-down-icon {
-        font-size: 150%;
-        color: red;
-        font-weight: bold;
-    }
+.mini-drawer-arrow-down-icon {
+    font-size: 150%;
+    color: red;
+    font-weight: bold;
 }
 
 .mini-drawer-big-container {
-        display: flex;
+    display: flex;
 }
 
 
