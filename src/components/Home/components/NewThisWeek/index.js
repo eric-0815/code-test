@@ -1,10 +1,12 @@
+import React, { useMemo } from 'react'
 import Grid from '@mui/material/Grid';
 import HoverPreview from './components/HoverPreview';
 import './index.css'
 
-const NewThisWeek = (props) => {
-  const { movies, isSmall } = props
-  const someMovies = movies.slice(0, 6)
+const NewThisWeek = ({ movies, isSmall }) => {
+  const someMovies = useMemo(() => {
+    return movies.slice(0, 6)
+  }, [movies])
 
   return (
     <div>
@@ -25,7 +27,6 @@ const NewThisWeek = (props) => {
         })}
       </Grid>
     </div >
-
   );
 }
 

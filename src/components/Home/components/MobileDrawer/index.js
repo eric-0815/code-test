@@ -6,7 +6,6 @@ import MovieIcon from '@mui/icons-material/Movie';
 import './index.css'
 
 const MobileDrawer = () => {
-
     return (
         <div className='bottom-drawer-container'>
             <HomeIcon className='bottom-drawer-button' />

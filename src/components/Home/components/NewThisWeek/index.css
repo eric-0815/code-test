@@ -30,10 +30,6 @@
         height: auto;
     }
 
-    .new-this-week-grid {
-        align-items: center;
-        flex-direction: column;
-    }
 }
 
 @media (max-width: 800px) {

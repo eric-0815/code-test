@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -6,8 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import './index.css'
 
-const HoverCard = (props) => {
-  const { image, title, overview, vote_average } = props
+const HoverCard = ({ image, title, overview, vote_average }) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia

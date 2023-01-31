@@ -1,5 +1,3 @@
-
-
 const HoverableDiv = ({ handleOpen, image, title, isSmall }) => {
   const slicedTitle = isSmall && title.length > 8 ? title.slice(0, 8) + '...' : title
   return (

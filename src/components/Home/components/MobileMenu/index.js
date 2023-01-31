@@ -4,10 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import MiniDrawer from '../MiniDrawer'
 import './index.css'
 
-
-
-const MobileMenu = (props) => {
-    const { isOpen, setIsOpen, isMobile, setIsMobile, isBig, isSmall } = props
+const MobileMenu = ({ isOpen, setIsOpen, isMobile, setIsMobile, isBig, isSmall }) => {
     const handleOpendAndClose = useCallback(() => {
         setIsOpen(!isOpen)
         setIsMobile(true)
@@ -33,6 +30,5 @@ const MobileMenu = (props) => {
         </div>
     )
 }
-
 
 export default MobileMenu

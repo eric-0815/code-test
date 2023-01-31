@@ -2,7 +2,14 @@ import MobileMenu from '../MobileMenu'
 import './index.css'
 
 const MainPage = (props) => {
-    const { movie, isOpen, setIsOpen, isMobile, setIsMobile, isBig, isSmall } = props
+    const {
+        movie,
+        isOpen,
+        setIsOpen,
+        isMobile,
+        setIsMobile,
+        isBig,
+        isSmall } = props
     const { backdrop_path, title, overview, vote_average } = movie
 
     return (

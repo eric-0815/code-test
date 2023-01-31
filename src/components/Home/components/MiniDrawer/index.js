@@ -43,16 +43,16 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, isOpen, drawerWidth }) => ({
+  ({ theme, open, drawerWidth }) => ({
     width: drawerWidth,
     flexShrink: 0,
     whiteSpace: 'nowrap',
     boxSizing: 'border-box',
-    ...(isOpen && {
+    ...(open && {
       ...openedMixin(theme, drawerWidth),
       '& .MuiDrawer-paper': openedMixin(theme, drawerWidth),
     }),
-    ...(!isOpen && {
+    ...(!open && {
       ...closedMixin(theme),
       '& .MuiDrawer-paper': closedMixin(theme, drawerWidth),
     }),
@@ -60,13 +60,17 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const MiniDrawer = (props) => {
-  const { isOpen, setIsOpen, isMobile, setIsMobile, isBig, isSmall } = props
+  const {
+    isOpen,
+    setIsOpen,
+    isMobile,
+    setIsMobile,
+    isBig,
+    isSmall } = props
 
   const className = useState(isBig ? SHOW_CONTAINER : HIDE_CONTAINER)
   const [containerClassName, setContainerClassName] = useState(className);
   const [drawerWidth, setDrawerWidth] = useState(isMobile ? MOBILE_WIDTH : NORMAL_WIDTH);
-
-  console.log(drawerWidth)
 
   const handleOpendAndClose = useCallback(() => {
     setIsOpen(!isOpen)
@@ -95,7 +99,7 @@ const MiniDrawer = (props) => {
 
   return (
     <div className={containerClassName}>
-      <Drawer variant="permanent" isOpen={isOpen} drawerWidth={drawerWidth} style={{ background: 'black' }}>
+      <Drawer variant="permanent" open={isOpen} drawerWidth={drawerWidth} style={{ background: 'black' }}>
         <DrawerHeader>
           <IconButton onClick={handleOpendAndClose} >
             <KeyboardArrowDownIcon className='mini-drawer-arrow-down-icon' />
