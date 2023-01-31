@@ -19,7 +19,7 @@ const NewThisWeek = (props) => {
         {someMovies.map((movie, index) => {
           const { backdrop_path, title, overview, vote_average } = movie
           return (
-            <Grid item xs={2} sm={4} md={md} key={index}>
+            <Grid item xs={2} key={index}>
               <HoverPreview
                 image={backdrop_path}
                 title={title}

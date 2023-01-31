@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -55,15 +55,13 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const MiniDrawer = ({ isMobile }) => {
+const MiniDrawer = (props) => {
   const [open, setOpen] = useState(false)
 
-  const boxClassName = isMobile ? '' : 'mini-drawer-container'
-
+  const boxClassName = '' // isMobile ? '' : 'mini-drawer-container'
   const handleDrawerOpenAndClose = () => {
     setOpen(!open);
   };
-
   return (
     <Box className={boxClassName} >
       <CssBaseline />

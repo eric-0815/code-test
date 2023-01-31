@@ -8,8 +8,8 @@
     }
 
     .new-this-week-picture {
-        height: 120px;
         width: 200px;
+        height: auto;
     }
 
     .new-this-week-grid {
@@ -26,13 +26,20 @@
     }
 
     .new-this-week-picture {
-        height: 120px;
-        width: 200px;
+        width: 150px;
+        height: auto;
     }
 
     .new-this-week-grid {
         align-items: center;
         flex-direction: column;
+    }
+}
+
+@media (max-width: 800px) {
+    .new-this-week-picture {
+        width: 80px;
+        height: auto;
     }
 }
 

@@ -1,10 +1,10 @@
+import React, { useContext } from 'react'
 import MobileMenu from '../MobileMenu'
 import './index.css'
 
 const MainPage = (props) => {
     const { movie } = props
     const { backdrop_path, title, overview, vote_average } = movie
-
 
     return (
         <div alt="" className="main-background" style={{ backgroundImage: `url(${backdrop_path})` }}>
