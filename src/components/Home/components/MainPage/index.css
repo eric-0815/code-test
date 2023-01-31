@@ -64,6 +64,7 @@
 
     .main-rating-container {
         display: flex;
+        z-index: 1;
     }
 }
 
@@ -80,13 +81,14 @@
         font-size: 24px;
         font-weight: bold;
         padding-top: 150px;
+        margin: 0px 0px 0px 10px;
     }
 
     .main-overview {
         color: white;
         font-size: 18px;
         padding-top: 25px;
-        margin-bottom: 25px;
+        margin: 0px 0px 25px 10px;
     }
 
     .main-rating {
@@ -131,7 +133,7 @@
         font-weight: bold;
         font-size: 20px;
         background-color: rgb(234, 176, 67);
-        margin: 0px 10px 0px 80px;
+        margin: 0px 10px 0px 10px;
         padding: 2px 5px 2px 5px
     }
 

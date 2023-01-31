@@ -1,13 +1,19 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import useMedia from 'use-media';
 import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
-import CssBaseline from '@mui/material/CssBaseline';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import IconButton from '@mui/material/IconButton';
 import DrawerContent from '../DrawerContent';
 import './index.css'
+
+const SHOW_CONTAINER = 'mini-drawer-show-container'
+const EXPAND_CONTAINER = 'mini-drawer-expand-container'
+const HIDE_CONTAINER = 'mini-drawer-hide-container'
+
+const NORMAL_WIDTH = 180
+const MOBILE_WIDTH = 500
+
 
 const openedMixin = (theme, drawerWidth) => ({
   width: drawerWidth,
@@ -59,29 +65,36 @@ const MiniDrawer = (props) => {
 
   const isBig = useMedia({ minWidth: '1300px' });
   const isSmall = useMedia({ maxWidth: '1300px' });
-  const className = useState(isBig ? 'mini-drawer-big-container' : 'mini-drawer-small-container')
+  const className = useState(isBig ? SHOW_CONTAINER : HIDE_CONTAINER)
   const [containerClassName, setContainerClassName] = useState(className);
+  const [drawerWidth, setDrawerWidth] = useState(isMobile ? MOBILE_WIDTH : NORMAL_WIDTH);
 
-  const drawerWidth = isMobile ? 500 : 180;
+  console.log(drawerWidth)
+
   const handleOpendAndClose = useCallback(() => {
-    // setIsOpen(!isOpen)
     setIsOpen(!isOpen)
     setIsMobile(false)
   }, [isOpen, setIsOpen, setIsMobile])
 
   useEffect(() => {
-    const shouldShow = () => {
-      if (isBig) return true
-      else if (isSmall && isOpen) return true
-      return false
+    const changeClassName = () => {
+      let newClassName;
+      if (isBig) {
+        newClassName = SHOW_CONTAINER
+      }
+      else if (isSmall && isOpen) {
+        newClassName = EXPAND_CONTAINER
+      }
+      else {
+        newClassName = HIDE_CONTAINER
+      }
+      setContainerClassName(newClassName)
     }
-    console.log(shouldShow())
-    const newClassName = shouldShow() ? 'mini-drawer-big-container' : 'mini-drawer-small-container'
-    console.log(newClassName)
-    setContainerClassName(newClassName)
 
+    if (isMobile) setDrawerWidth(MOBILE_WIDTH);
+    changeClassName()
 
-  }, [isBig, setContainerClassName, isMobile, isSmall, isOpen]);
+  }, [isBig, setContainerClassName, isMobile, isSmall, isOpen, drawerWidth, setDrawerWidth]);
 
   return (
     <div className={containerClassName}>

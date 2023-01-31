@@ -4,12 +4,15 @@
     font-weight: bold;
 }
 
-.mini-drawer-big-container {
+.mini-drawer-show-container {
     display: flex;
 }
 
-
-.mini-drawer-small-container {
+.mini-drawer-hide-container {
     display: none;
 }
 
+.mini-drawer-expand-container {
+    display: flex;
+    opacity: 90%;
+}
