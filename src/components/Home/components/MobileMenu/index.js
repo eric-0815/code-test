@@ -7,8 +7,7 @@ import './index.css'
 
 
 const MobileMenu = (props) => {
-    const { isOpen, setIsOpen, setIsMobile } = props
-
+    const { isOpen, setIsOpen, isMobile, setIsMobile } = props
     const handleOpendAndClose = useCallback(() => {
         setIsOpen(!isOpen)
         setIsMobile(true)
@@ -19,7 +18,7 @@ const MobileMenu = (props) => {
             <IconButton>
                 <MenuIcon />
             </IconButton>
-            <MiniDrawer isMobile={true} />
+            <MiniDrawer isOpen={isOpen} isMobile={true} />
         </div>
     )
 }

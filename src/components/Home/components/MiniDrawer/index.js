@@ -56,7 +56,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const MiniDrawer = (props) => {
   const { isOpen, setIsOpen, isMobile, setIsMobile } = props
-  const [open, setOpen] = useState(isOpen);
 
   const isBig = useMedia({ minWidth: '1300px' });
   const isSmall = useMedia({ maxWidth: '1300px' });
@@ -64,29 +63,37 @@ const MiniDrawer = (props) => {
   const [containerClassName, setContainerClassName] = useState(className);
 
   const drawerWidth = isMobile ? 500 : 180;
-  console.log('isOpen: ', isOpen)
   const handleOpendAndClose = useCallback(() => {
     // setIsOpen(!isOpen)
-    setOpen(!open)
+    setIsOpen(!isOpen)
     setIsMobile(false)
-  }, [open, setOpen, setIsMobile])
+  }, [isOpen, setIsOpen, setIsMobile])
 
-  // useEffect(() => {
-  //   const newClassName = isBig && !isMobile ? 'mini-drawer-big-container' : 'mini-drawer-small-container'
-  //   console.log(newClassName)
-  //   setContainerClassName(newClassName)
-  // }, [isBig, setContainerClassName]);
+  useEffect(() => {
+    const shouldShow = () => {
+      if (isBig) return true
+      if (isSmall && isOpen) return true
+      return false
+    }
+    console.log('isOpen: ', isOpen)
+    console.log(shouldShow())
+    const newClassName = shouldShow() ? 'mini-drawer-big-container' : 'mini-drawer-small-container'
+    console.log(newClassName)
+    setContainerClassName(newClassName)
+
+
+  }, [isBig, setContainerClassName, isMobile, isSmall]);
 
   return (
     <div className={containerClassName}>
-      <Drawer variant="permanent" isOpen={open} drawerWidth={drawerWidth} style={{ background: 'black' }}>
+      <Drawer variant="permanent" isOpen={isOpen} drawerWidth={drawerWidth} style={{ background: 'black' }}>
         <DrawerHeader>
           <IconButton onClick={handleOpendAndClose} >
             <KeyboardArrowDownIcon className='mini-drawer-arrow-down-icon' />
           </IconButton>
-          {open && <div>PLAY</div>}
+          {isOpen && <div>PLAY</div>}
         </DrawerHeader>
-        <DrawerContent open={open} />
+        <DrawerContent open={isOpen} />
       </Drawer>
     </div>
   );
